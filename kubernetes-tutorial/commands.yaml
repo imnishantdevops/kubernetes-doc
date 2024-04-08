@@ -1,0 +1,46 @@
+𝐂𝐥𝐮𝐬𝐭𝐞𝐫 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭
+Get Cluster Info: kubectl cluster-info
+View Nodes: kubectl get nodes
+View Metrics for Nodes: kubectl top node
+View Kubernetes Version: kubectl version
+
+𝐖𝐨𝐫𝐤𝐢𝐧𝐠 𝐰𝐢𝐭𝐡 𝐍𝐚𝐦𝐞𝐬𝐩𝐚𝐜𝐞𝐬
+List All Namespaces: kubectl get namespaces
+Create a Namespace: kubectl create namespace <name>
+Set Default Namespace for Context: kubectl config set-context --current --namespace=<name>
+
+𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭𝐬 𝐚𝐧𝐝 𝐏𝐨𝐝𝐬
+Create a Deployment: kubectl create deployment <name> --image=<image>
+(this is for quick testing, better to use Kubernetes Manifest files for this)
+Get Deployments: kubectl get deployments
+Get Pods: kubectl get pods
+Describe Deployment: kubectl describe deployment <name>
+Delete Deployment: kubectl delete deployment <name>
+Scale a Deployment: kubectl scale deployment <name> --replicas=<num>
+
+𝐒𝐞𝐫𝐯𝐢𝐜𝐞𝐬 (𝐍𝐞𝐭𝐰𝐨𝐫𝐤𝐢𝐧𝐠)
+Expose Deployment as a Service: kubectl expose deployment <name> --type=LoadBalancer --port=<port>
+Get Services: kubectl get services
+Describe a Service: kubectl describe services <name>
+Delete a Service: kubectl delete service <name>
+
+𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝐒𝐞𝐜𝐫𝐞𝐭𝐬
+Create a ConfigMap: kubectl create configmap <name> --from-literal=<key>=<value>
+Get ConfigMaps: kubectl get configmaps
+Create a Secret: kubectl create secret generic <name> --from-literal=<key>=<value>
+Get Secrets: kubectl get secrets
+
+𝐋𝐨𝐠𝐬 𝐚𝐧𝐝 𝐃𝐞𝐛𝐮𝐠𝐠𝐢𝐧𝐠
+Get Logs for a Pod: kubectl logs <pod_name>
+Execute Command in Pod: kubectl exec -it <pod_name> -- <command>
+Copy Files from/to Pod: kubectl cp <file-spec-src> <file-spec-dest>
+
+𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬
+Rollout History: kubectl rollout history deployment/<name>
+Undo Deployment: kubectl rollout undo deployment/<name>
+Apply Configuration File: kubectl apply -f <file.yaml>
+Get Resource Usage by Pod: kubectl top pod
+
+𝐍𝐞𝐭𝐰𝐨𝐫𝐤𝐢𝐧𝐠 𝐚𝐧𝐝 𝐏𝐨𝐥𝐢𝐜𝐢𝐞𝐬
+Network Policies: kubectl get networkpolicies
+Edit a Resource: kubectl edit <resource_type>/<name>
